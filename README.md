@@ -4,7 +4,7 @@ A network multiplayer blackjack game using Python
 
 # Rules of the game
 
-The rules are the american based version of black jack as described in wikipedia[1].
+The rules are the american based version of black jack as described in [wikipedia](https://en.wikipedia.org/wiki/Blackjack).
 
 # The game
 
@@ -20,4 +20,3 @@ Player two joins the server with
 ```
 blackjack join 192.168.1.122:8000
 ```
-[1]: [https://en.wikipedia.org/wiki/Blackjack]
