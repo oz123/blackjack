@@ -14,6 +14,23 @@ class Card:
 
         self.value = value
 
+        if value in ['Q', 'K', 'J']:
+            self.numeric_value = 10
+        elif value == 'A':
+            self.numeric_value = 11
+        else:
+            self.numeric_value = value
+
+    def __add__(self, other):
+        return self.numeric_value + other.numeric_value
+
+    def __gt__(self, other):
+        return self.numeric_value > other.numeric_value
+
+    def __eq__(self, other):
+        return self.numeric_value == other.numeric_value
+
 
 class Deck:
+
     pass
