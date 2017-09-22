@@ -42,6 +42,12 @@ def test_greater_than():
     assert True == (Card('spade', "Q") > Card('spade', 3))
 
 
+def test_proper_repr():
+
+    assert "<A of spades>" == repr(Card("spade", "A"))
+    assert "<A of spades>" == str(Card("spade", "A"))
+
+
 def assert_truths():
     assert "A"
     assert 12
@@ -52,3 +58,34 @@ def assert_truths():
     assert not False
     assert not []
     assert not ""
+
+
+def test_init_deck():
+
+    deck = Deck()
+
+    assert len(deck.cards) == 52
+
+
+def test_shuffle_deck():
+
+    deck_a = Deck()
+    deck_b = Deck()
+
+    for c_a, c_b in zip(deck_a.cards, deck_b.cards):
+        assert c_a.value == c_b.value
+
+    # OK the decks are identical
+    # now let's shuffle one of the decks
+
+    deck_b.shuffle()
+    randomness = []
+
+    for c_a, c_b in zip(deck_a.cards, deck_b.cards):
+        randomness.append(c_a.value != c_b.value)
+
+    assert any(randomness)
+
+
+def deal_hands():
+    pass

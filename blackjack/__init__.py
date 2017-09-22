@@ -1,3 +1,5 @@
+import random
+
 
 class Card:
 
@@ -30,7 +32,24 @@ class Card:
     def __eq__(self, other):
         return self.numeric_value == other.numeric_value
 
+    def __repr__(self):
+        return "<{} of {}s>".format(self.value, self.suit)
+
+    def __str__(self):
+        return repr(self)
+
 
 class Deck:
 
-    pass
+    """A Standard deck class with 52 cards, 13 cards in each suite"""
+
+    def __init__(self):
+
+        self.cards = []  # list()
+
+        for suit in ['spade', 'club', 'diamond', 'heart']:
+            for value in list(range(2, 11)) + ["J", "Q", "K", "A"]:
+                self.cards.append(Card(suit, value))
+
+    def shuffle(self):
+        random.shuffle(self.cards)
