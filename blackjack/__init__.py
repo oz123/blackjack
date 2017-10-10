@@ -53,3 +53,16 @@ class Deck:
 
     def shuffle(self):
         random.shuffle(self.cards)
+
+    def __len__(self):
+        return len(self.cards)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        try:
+            card = self.cards.pop(0)
+            return card
+        except IndexError:
+            raise StopIteration("No more cards left")
