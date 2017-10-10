@@ -103,6 +103,26 @@ def test_iter_deck():
 
     assert next(deck) == Card('spade', 5)
 
+def test_deal_hands():
+    deck = Deck()
 
-def deal_hands():
-    pass
+    assert isinstance(deck.deal_card(), Card)
+
+    card1, card2 = deck.deal_hand()
+
+    assert isinstance(card1, Card)
+    assert isinstance(card2, Card)
+
+    assert card1 != card2
+
+    deck = Deck()
+
+    deck.shuffle()
+    card1, card2 = deck.deal_hand()
+
+    assert card1 != card2
+
+    card1, card2 = deck.deal_card(), deck.deal_card()
+
+    assert card1 != card2
+

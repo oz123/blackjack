@@ -66,3 +66,16 @@ class Deck:
             return card
         except IndexError:
             raise StopIteration("No more cards left")
+
+    def deal_hand(self):
+        return self._deal(), self._deal()
+
+    def deal_card(self):
+        return self._deal()
+
+    def _deal(self):
+        """
+        :return: a card from our deck
+        """
+
+        return next(self)
