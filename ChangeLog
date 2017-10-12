@@ -1,0 +1,23 @@
+CHANGES
+=======
+
+0.0.1
+-----
+
+* Refactor: move setup.py to use PBR
+* Make our program installable and executable
+* Add ability to deal a single card or a hand
+* Make our Deck class an iterator
+* Add Logic into the Deck class
+* Overload addition and equity
+* Add Numerical or Face values
+* pep8
+* Validate suite of a card
+* Start working on a Card class
+* Add initial project structure
+* Update README.md
+* Update README.md
+* Update README.md
+* fix link
+* Add demo of the game start
+* Initial commit
